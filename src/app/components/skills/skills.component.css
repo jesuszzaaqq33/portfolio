@@ -1,0 +1,184 @@
+/* Estilos generales para la sección de habilidades */
+.skills {
+  position: relative;
+  min-height: 90vh; /* Altura mínima igual a la altura de la pantalla */
+  padding: 2rem 4rem; /* Espaciado interno */
+  text-align: center; /* Alineación del texto */
+  color: #fff; /* Color del texto blanco */
+  overflow: hidden; /* Asegura que las ondas no se desborden fuera del home */
+  background: #1d5e9f; /* Fondo azul */
+  z-index: 10; /* Asegura que esté por encima de las ondas */
+  /* padding-bottom: 120px; */
+}
+
+.skills h2 {
+  font-size: 46px;
+  margin-bottom: 4rem;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 255, 255, 0.5); /* Efecto de borde y resplandor */
+
+}
+
+
+
+/* Estilo para el contenedor de la lista */
+.skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+  justify-content: center; /* Centra los elementos */
+  gap: 30px; /* Espaciado entre los iconos */
+}
+
+/* Estilo para las imágenes dentro de la lista */
+.skills li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px; /* Establecemos un tamaño base para los iconos */
+  height: 120px; /* Establecemos un tamaño base para los iconos */
+  transition: transform 0.3s ease; /* Efecto al pasar el ratón */
+}
+
+/* Aumentar tamaño de las imágenes */
+.skills li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Asegura que la imagen se ajuste correctamente dentro del contenedor */
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover para aumentar el tamaño de las imágenes */
+.skills li:hover {
+  transform: scale(1.2); /* Aumenta ligeramente el tamaño de la imagen */
+}
+
+/* Estilo para las ondas */
+.skills .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background: #f8f9fa; /* Azul claro */
+  clip-path: ellipse(200% 50% at 50% 100%);
+  z-index: 1; /* Asegura que las ondas queden por debajo del contenido */
+
+}
+
+.skills .wave-secondary {
+  position: absolute;
+  bottom: 7vh;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  background: #4a8cc7;
+  clip-path: ellipse(200% 50% at 170% 50%);
+  z-index: 1; /* Asegura que las ondas secundarias queden por debajo */
+
+}
+
+/* Contenedor de los botones */
+.button-container {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: 1rem; /* Espacio entre los botones */
+  position: absolute;
+  bottom: 15%; /* Ajusta la distancia desde el fondo */
+  left: 50%;
+  transform: translateX(-50%); /* Centra el contenedor en el eje horizontal */
+  z-index: 10; /* Asegura que los botones estén por encima de otros elementos */
+}
+/* Estilo común para los botones */
+.btn-scroll {
+  display: inline-block;
+  font-size: 1.2rem; /* Tamaño grande para el texto o ícono */
+  color: #fff; /* Color del texto o ícono */
+  background: linear-gradient(45deg, #4a8cc7, #1d5e9f); /* Fondo con gradiente */
+  padding: 0.8rem 1.5rem; /* Espaciado interno más grande */
+  border-radius: 10px; /* Bordes completamente redondeados */
+  border: none; /* Sin bordes */
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto hover: resalta el botón */
+.btn-scroll:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #1d5e9f, #4a8cc7);
+}
+
+/* Efecto active: hunde el botón */
+.btn-scroll:active {
+  transform: translateY(2px); /* Se hunde al hacer clic */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Reduce la sombra */
+}
+
+/* Decoración adicional (brillo) */
+.btn-scroll::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 30%);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: scale(0);
+  z-index: 0;
+}
+
+/* Activamos el brillo al hacer hover */
+.btn-scroll:hover::before {
+  opacity: 0.6;
+  transform: scale(1);
+}
+
+/* Añade un borde animado */
+.btn-scroll::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #4a8cc7, #1d5e9f);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: border-pulse 2s infinite;
+}
+/* Ocultar los botones en pantallas más pequeñas */
+@media screen and (max-width: 700px) {
+  .button-container {
+    display: none; /* Oculta el contenedor de botones */
+  }
+
+}
+@media screen and (max-width: 1200px) {
+
+  .skills {
+    position: relative;
+    min-height: 90vh; /* Altura mínima igual a la altura de la pantalla */
+    padding: 2rem 4rem; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+    color: #fff; /* Color del texto blanco */
+    overflow: hidden; /* Asegura que las ondas no se desborden fuera del home */
+    background: #1d5e9f; /* Fondo azul */
+    z-index: 10; /* Asegura que esté por encima de las ondas */
+    padding-bottom: 120px;
+  }
+}

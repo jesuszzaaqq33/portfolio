@@ -1,0 +1,23 @@
+
+<div class="experience-section">
+  <h2>Experiencia</h2>
+  <div class="experience-card" *ngFor="let exp of experiences">
+    <div class="company-info">
+      <h3 class="company">{{ exp.company }}</h3>
+      <span class="job-type">{{ exp.job_type }}</span>
+      <span class="duration">{{ exp.duration }}</span>
+    </div>
+    <div class="role-info">
+      <h4 class="role">{{ exp.title }}</h4>
+      <span class="location">{{ exp.location }}</span>
+    </div>
+    <div class="description">
+      <p>{{ exp.description }}</p>
+    </div>
+  </div>
+  <div class="button-container">
+    <a href="#home">
+        <button class="btn-scroll">↑</button>
+    </a>
+  </div>
+</div>

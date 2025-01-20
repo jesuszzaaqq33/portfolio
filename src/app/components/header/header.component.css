@@ -1,0 +1,168 @@
+/* Estilos generales del header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.content {
+  margin-top: 60px; /* Ajusta según la altura del header */
+  padding: 20px; /* Opcional: para dar espacio adicional al contenido */
+}
+/* Contenedor izquierdo (imagen y nombre) */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: transform 0.3s ease; /* Suaviza la transición de rotación */
+}
+/* Rotación cuando el ratón está sobre la imagen */
+.profile-img:hover {
+  transform: rotate(360deg); /* Rota 360 grados */
+}
+
+.name {
+  text-decoration: none;
+  font-weight: bold;
+  color: #1d5e9f;
+  font-size: 18px;
+}
+
+/* Navegación */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1d5e9f;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover, .name:hover {
+  color: #3290f5;
+}
+
+/* Ícono de LinkedIn alineado al texto */
+.nav-link-icon {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-icon svg {
+  margin-right: 5px;
+  fill: #007bff;
+  transition: fill 0.3s ease;
+}
+
+.nav-link-icon:hover svg {
+  fill: #0056b3;
+}
+/* Asegurarse de que los botones no generen márgenes ni padding adicionales */
+button {
+  all: unset; /* Elimina todos los estilos predeterminados */
+  display: inline-flex; /* Asegura que el botón se alinee con otros elementos en la misma fila */
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  cursor: pointer; /* Muestra el cursor de mano */
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Elimina el borde por defecto */
+  padding: 0; /* Elimina el padding interno */
+  margin: 0; /* Elimina cualquier margen */
+  height: 30px; /* Tamaño fijo para el botón */
+  width: 30px; /* Tamaño fijo para el botón */
+  border-radius: 50%; /* Hace que el botón tenga bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave para el fondo */
+}
+
+/* Estilos específicos para el sol (modo claro) */
+button.sun {
+  background-color: #FFEB3B; /* Fondo amarillo para el sol */
+}
+
+/* Estilos específicos para la luna (modo oscuro) */
+button.moon {
+  background-color: #2196F3; /* Fondo azul para la luna */
+}
+
+/* Estilo para los SVGs dentro de los botones */
+svg {
+  width: 20px; /* Asegura que los iconos SVG no sean demasiado grandes */
+  height: 20px;
+  fill: currentColor; /* Permite que el color de los iconos se herede */
+}
+
+/* Cuando el botón está en modo oscuro o claro, cambia el color del icono */
+button:hover svg,
+button:focus svg {
+  color: #fff; /* Color del icono al hacer hover o al enfocar el botón */
+}
+
+/* Asegurarse de que el contenedor de los botones en pantallas grandes no genere espacios extra */
+.hidden.md\\:block {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .hidden.md\\:block {
+    display: block; /* Asegura que los botones solo se muestren en pantallas grandes */
+  }
+}
+/* Media query para pantallas más pequeñas */
+@media screen and (max-width: 700px) {
+  .header-left .name {
+    font-size: 16px; /* Reduce el tamaño del texto */
+  }
+
+  /* Navegación */
+  .header-nav {
+    display: none; /* Oculta el menú por defecto */
+    flex-direction: column; /* Los elementos del menú se alinean verticalmente */
+    width: 200px;; /* Ocupa todo el ancho */
+    margin-top: 10px;
+    gap: 10px;
+    background-color: white; /* Fondo blanco para el cuadro */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar el efecto de cuadro */
+    position: absolute; /* Posición absoluta para que flote sobre el contenido */
+    top: 50px; /* Se coloca debajo del header */
+    right: 0; /* Alineado al lado izquierdo */
+    z-index: 999; /* Asegura que esté por encima de otros elementos */
+  }
+
+  .header-nav.active {
+    display: flex; /* Muestra el menú cuando la clase 'active' está presente */
+  }
+
+  /* Icono de hamburguesa */
+  .hamburger {
+    display: flex; /* Solo se muestra en pantallas pequeñas */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #1d5e9f;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+}
+

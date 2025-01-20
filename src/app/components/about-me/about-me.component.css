@@ -1,0 +1,245 @@
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px; /* Espacio entre las columnas */
+}
+.about-me {
+  position: relative;
+  min-height: 90vh;
+
+  padding: 2rem 5rem;
+  color: #050505;
+  overflow: hidden;
+}
+.left {
+  flex: 1; /* La columna izquierda ocupa el espacio restante */
+  margin-top: 1rem;
+}
+.right {
+  flex: 1; /* La columna derecha ocupa el espacio restante */
+  max-width: 400px; /* Ancho máximo para la columna derecha */
+  display: flex; /* Flexbox para centrar contenido */
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  text-align: center; /* Centra el texto dentro del contenedor */
+  height: 100%; /* Asegúrate de que el contenedor tenga un alto definido */
+}
+.about-me h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #4a8cc7;
+  margin-bottom: 1rem;
+
+}
+
+.about-me h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4a8cc7;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+.about-me img {
+  width: 80%; /* Ajusta el tamaño de la imagen al ancho del contenedor */
+  height: auto;
+  padding: 0.2rem;
+}
+.about-me p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 2rem;
+}
+
+/* body.dark-mode {
+  --text-color: #e0e0e0;
+  --background-color: #121212;
+}
+
+body.dark-mode .about-me p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+.dark-mode .about-me  p {
+  color: #e0e0e0 !important;
+} */
+
+.about-me .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background: #1d5e9f;
+  clip-path: ellipse(200% 50% at 50% 100%);
+}
+
+.about-me .wave-secondary {
+  position: absolute;
+  bottom: 7vh;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  background: #4a8cc7;
+  clip-path: ellipse(200% 50% at 170% 50%);
+}
+
+.scroll-down {
+  position: relative;
+  z-index: 10;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  cursor: pointer;
+}
+
+.scroll-down .arrow {
+  display: block;
+  font-size: 4rem;
+  color: #cf1111;
+  animation: bounce 1.5s infinite;
+}
+
+.scroll-down .arrow:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+
+
+.read-more {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #4a8cc7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+  background-color: #1d5e9f;
+}
+/* Contenedor de los botones */
+.button-container {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: 1rem; /* Espacio entre los botones */
+  position: absolute;
+  bottom: 15%; /* Ajusta la distancia desde el fondo */
+  left: 50%;
+  transform: translateX(-50%); /* Centra el contenedor en el eje horizontal */
+  z-index: 10; /* Asegura que los botones estén por encima de otros elementos */
+}
+.button-container.show-more-active {
+  bottom: 5%; /* Ajusta la nueva distancia desde el fondo */
+}
+
+/* Estilo común para los botones */
+.btn-scroll {
+  display: inline-block;
+  font-size: 1.2rem; /* Tamaño grande para el texto o ícono */
+  color: #fff; /* Color del texto o ícono */
+  background: linear-gradient(45deg, #4a8cc7, #1d5e9f); /* Fondo con gradiente */
+  padding: 0.8rem 1.5rem; /* Espaciado interno más grande */
+  border-radius: 10px; /* Bordes completamente redondeados */
+  border: none; /* Sin bordes */
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto hover: resalta el botón */
+.btn-scroll:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #1d5e9f, #4a8cc7);
+}
+
+/* Efecto active: hunde el botón */
+.btn-scroll:active {
+  transform: translateY(2px); /* Se hunde al hacer clic */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Reduce la sombra */
+}
+
+/* Decoración adicional (brillo) */
+.btn-scroll::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 30%);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: scale(0);
+  z-index: 0;
+}
+
+/* Activamos el brillo al hacer hover */
+.btn-scroll:hover::before {
+  opacity: 0.6;
+  transform: scale(1);
+}
+
+/* Añade un borde animado */
+.btn-scroll::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #4a8cc7, #1d5e9f);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: border-pulse 2s infinite;
+}
+
+/* Ocultar los botones en pantallas más pequeñas */
+@media screen and (max-width: 700px) {
+
+  .content {
+    flex-direction: column; /* Cambia la dirección a columna */
+    align-items: stretch; /* Asegura que los elementos ocupen todo el ancho */
+  }
+
+  .right {
+    max-width: none; /* Elimina el ancho máximo para que ocupe todo el espacio disponible */
+  }
+
+  .button-container {
+    display: none; /* Oculta el contenedor de botones */
+  }
+  .about-me .image {
+    bottom: 5%;
+    right: 5%;
+    width: 30vw;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-me .image {
+    bottom: 2rem;
+    right: 2rem;
+    width: 40vw;
+    max-width: 150px;
+  }
+}

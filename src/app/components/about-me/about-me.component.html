@@ -1,0 +1,31 @@
+<section class="about-me">
+  <div class="content">
+    <div class="left">
+      <h1>Desarrollador Full Stack</h1>
+      <p>
+        Mi camino comenzó en el mundo de la química y la biotecnología, mi curiosidad y ganas de crear me llevaron a descubrir el universo de la programación. Tras obtener un grado en Química y un máster en Biotecnología en la Universidad de Granada (UGR), comencé mi carrera profesional como adjunto al jefe de turno en una planta de producción de biodiésel.
+      </p>
+      <p *ngIf="showMore">
+        Empecé mi aprendizaje de forma autodidacta a través de Platzi, donde adquirí sólidos fundamentos en desarrollo web y software. Más adelante, complementé mi formación con cursos especializados del SEPE.
+        <br /><br />
+        Decidido a avanzar en mi carrera, formalicé mis conocimientos en programación a través de un máster en Desarrollo de Aplicaciones Web en la Universitat Oberta de Catalunya (UOC). Como parte de esta experiencia, realicé prácticas en Labsland, desempeñándome como desarrollador fullstack. Actualmente, formo parte de NTT DATA, donde trabajo como desarrollador enfocado en automatizaciones, aplicando soluciones innovadoras basadas en machine learning y modelos de inteligencia artificial generativa.      </p>
+      <button (click)="toggleMore()" class="read-more">
+        {{ showMore ? 'Leer menos' : 'Leer más' }}
+      </button>
+    </div>
+
+    <div class="right">
+      <h3>Sobre mi</h3>
+      <img src="../../../assets/images/rama-ciencias.jpg" alt="quimica">
+      <img src="../../../assets/images/sobreMi.jpg" alt="Codigo de programacion">
+    </div>
+  </div>
+  <div class="button-container" [ngClass]="{'show-more-active': showMore}">
+    <a href="#home">
+        <button class="btn-scroll">↑</button>
+    </a>
+    <a href="#skills">
+        <button class="btn-scroll">↓</button>
+    </a>
+  </div>
+</section>

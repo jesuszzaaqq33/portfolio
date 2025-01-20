@@ -1,0 +1,55 @@
+:root {
+  --background-color: #f8f9fa;
+  --text-color: #f1f1f1;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px; /* Altura del header */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Modo noche */
+body.dark-mode {
+  --background-color: #121212; /* Fondo negro */
+  --text-color: #e0e0e0; /* Texto gris claro */
+}
+
+/* Fondo con ondas */
+.body-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Ejemplo de otros estilos que podrías querer modificar en el modo oscuro */
+body.dark-mode .header {
+  background-color: #1f1f1f; /* Cambiar color de fondo de la cabecera en modo oscuro */
+}
+
+body.dark-mode .nav-link {
+  color: #e0e0e0; /* Cambiar color de los enlaces en el modo oscuro */
+}
+
+body.dark-mode .nav-link:hover {
+  color: #fff; /* Resaltar los enlaces cuando se pasa el ratón */
+}
+
+body.dark-mode .profile-img {
+  filter: brightness(0.7); /* Opcional, para oscurecer las imágenes */
+}
+
+app-theme-toggle {
+  display: inline-flex; /* Asegura que el componente se alinee con otros elementos en línea */
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  margin: 0; /* Elimina márgenes adicionales */
+  padding: 0; /* Elimina rellenos adicionales */
+}

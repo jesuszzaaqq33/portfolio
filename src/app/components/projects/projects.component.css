@@ -1,0 +1,141 @@
+/* Sección general */
+.experience-section {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #f3f2ef;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.experience-section h2 {
+  border-bottom: 2px solid #4a8cc7;
+  padding-bottom: 10px;
+  color: #4a8cc7;
+}
+/* Estilo para las tarjetas */
+.experience-card {
+  border-bottom: 1px solid #d1d1d1;
+  padding: 1.5rem 0;
+  margin-bottom: 1rem;
+}
+
+/* Estilo de la información de la empresa */
+.company-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.company {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #4a8cc7;
+}
+
+.job-type, .duration {
+  font-size: 0.9rem;
+  color: #666;
+  margin-left: 0.5rem;
+}
+
+/* Estilo de la información del rol */
+.role-info {
+  margin-bottom: 0.5rem;
+}
+
+.role {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Descripción */
+.description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Estilo común para los botones */
+.button-container {
+ text-align: center;
+}
+.btn-scroll {
+  display: inline-block;
+  font-size: 1.2rem; /* Tamaño grande para el texto o ícono */
+  color: #fff; /* Color del texto o ícono */
+  background: linear-gradient(45deg, #4a8cc7, #1d5e9f); /* Fondo con gradiente */
+  padding: 0.8rem 1.5rem; /* Espaciado interno más grande */
+  border-radius: 10px; /* Bordes completamente redondeados */
+  border: none; /* Sin bordes */
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto hover: resalta el botón */
+.btn-scroll:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #1d5e9f, #4a8cc7);
+}
+
+/* Efecto active: hunde el botón */
+.btn-scroll:active {
+  transform: translateY(2px); /* Se hunde al hacer clic */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Reduce la sombra */
+}
+
+/* Decoración adicional (brillo) */
+.btn-scroll::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 30%);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: scale(0);
+  z-index: 0;
+}
+
+/* Activamos el brillo al hacer hover */
+.btn-scroll:hover::before {
+  opacity: 0.6;
+  transform: scale(1);
+}
+
+/* Añade un borde animado */
+.btn-scroll::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #4a8cc7, #1d5e9f);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: border-pulse 2s infinite;
+}
+/* Ocultar los botones en pantallas más pequeñas */
+@media screen and (max-width: 700px) {
+  .button-container {
+    display: none; /* Oculta el contenedor de botones */
+  }
+}
