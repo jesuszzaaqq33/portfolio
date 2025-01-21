@@ -166,6 +166,19 @@
   .button-container {
     display: none; /* Oculta el contenedor de botones */
   }
+  .skills .wave {
+    height: 20vh; /* Reducir la altura de las ondas en pantallas pequeñas */
+  }
+
+  .skills .wave-secondary {
+    height: 10vh; /* Reducir la altura de las ondas secundarias */
+  }
+
+  /* Asegurarnos de que las imágenes no se solapen con las ondas */
+  .skills li img {
+    width: 90%; /* Ajustar el tamaño de las imágenes */
+    height: 90%; /* Ajustar el tamaño de las imágenes */
+  }
 
 }
 @media screen and (max-width: 1200px) {
